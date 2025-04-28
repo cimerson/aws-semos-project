@@ -16,6 +16,7 @@ const Home = () => {
                 />
                 <Box textAlign='center'>
                     <Heading size='2xl'>Our Awesome Project</Heading>
+                    <Heading size='2xl'>CI/CD</Heading>
                     <Text mt='4' fontSize='lg'>
                         We're building something amazing! This project aims to solve a
                         real-world problem and make a positive impact.
