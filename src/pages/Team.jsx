@@ -1,89 +1,75 @@
 import React from 'react'
 
-import { Box, Heading, Flex, Stack, Grid, GridItem, Image, Text, Center } from '@chakra-ui/react'
+import { Box, Heading, GridItem, Image, Container } from '@chakra-ui/react'
+
+import avatar from '../assets/avatar.jpg'
 
 const teamMembers = [
     {
-        name: 'John Doe',
-        role: 'Developer',
-        image: 'https://i1.sndcdn.com/artworks-gLOzhkPopE3fKUXJ-w3Ldmg-t500x500.jpg', // Replace with actual image
+        name: 'Ѓорѓи Богатинов',
+        image: avatar,
     },
     {
-        name: 'Jane Smith',
-        role: 'Designer',
-        image: 'https://i1.sndcdn.com/artworks-gLOzhkPopE3fKUXJ-w3Ldmg-t500x500.jpg', // Replace with actual image
+        name: 'Берк Дишо',
+        image: avatar,
     },
     {
-        name: 'Alice Johnson',
-        role: 'Project Manager',
-        image: 'https://i1.sndcdn.com/artworks-gLOzhkPopE3fKUXJ-w3Ldmg-t500x500.jpg', // Replace with actual image
+        name: 'Бојана Калков',
+        image: avatar,
     },
     {
-        name: 'Alice Johnson',
-        role: 'Project Manager',
-        image: 'https://i1.sndcdn.com/artworks-gLOzhkPopE3fKUXJ-w3Ldmg-t500x500.jpg', // Replace with actual image
+        name: 'Иван Ивановски',
+        image: avatar,
     },
     {
-        name: 'Alice Johnson',
-        role: 'Project Manager',
-        image: 'https://i1.sndcdn.com/artworks-gLOzhkPopE3fKUXJ-w3Ldmg-t500x500.jpg', // Replace with actual image
+        name: 'Стефан Петровски',
+        image: avatar,
     },
-
-    // Add more team members
+    {
+        name: 'Дејан Серафимовски',
+        image: avatar,
+    },
+    {
+        name: 'Александар Николов',
+        image: avatar
+    },
 ]
 
-const Team = () => {
-    return (
-        // <Center height='80vh'>
-        //     <Box textAlign='center'>
-        //         <Heading mb='8'>Our Team</Heading>
-        //         <Grid templateColumns='repeat(auto-fit, minmax(200px, 1fr))' gap={6}>
-        //             {teamMembers.map((member, index) => (
-        //                 <GridItem key={index}>
-        //                     <Image
-        //                         src={member.image}
-        //                         alt={member.name}
-        //                         borderRadius='full'
-        //                         boxSize='150px'
-        //                         objectFit='cover'
-        //                         mx='auto'
-        //                     />
-        //                     <Heading size='md' mt='4'>
-        //                         {member.name}
-        //                     </Heading>
-        //                     <Text>{member.role}</Text>
-        //                 </GridItem>
-        //             ))}
-        //         </Grid>
-        //     </Box>
-        // </Center>
 
-        <Center height='80vh'>
-      <Box textAlign='center'>
-        <Heading mb='8' color='white'>
-          Our Team
-        </Heading>
-        <Flex overflowX='auto' whiteSpace='nowrap' gap={6} justify='center'>
-          {teamMembers.map((member, index) => (
-            <Box key={index} textAlign='center' minW='200px'>
-              <Image
-                src={member.image}
-                alt={member.name}
-                borderRadius='full'
-                boxSize='150px'
-                objectFit='cover'
-                mb='4'
-                mx='auto'
-              />
-              <Heading size='md' color='white'>
-                {member.name}
-              </Heading>
-              <Text color='gray.300'>{member.role}</Text>
+const Team = () => {
+
+    const numMembers = teamMembers.length
+
+    return (
+        <Container maxW='container.xl' pt={10} pb={10}>
+            <Box textAlign='center'>
+                <Heading mb='16' color='white'>
+                    Our Team
+                </Heading>
+                <Box display='grid' gridTemplateColumns='repeat(auto-fit, minmax(300px, 1fr))' gridGap={6} mt={4} al>
+                    {teamMembers.map((member, index) => (
+                        <GridItem
+                            key={index}
+                            colSpan={numMembers % 3 === 1 && index === numMembers - 1 ? { base: 1, md: 3 } : 1}
+                            justifySelf={numMembers % 3 === 1 && index === numMembers - 1 ? 'center' : 'auto'}
+                        >
+                            <Image
+                                src={member.image}
+                                alt={member.name}
+                                borderRadius='full'
+                                boxSize='125px'
+                                objectFit='cover'
+                                mb='4'
+                                mx='auto'
+                            />
+                            <Heading size='md' color='white'>
+                                {member.name}
+                            </Heading>
+                        </GridItem>
+                    ))}
+                </Box>
             </Box>
-          ))}
-        </Flex>
-      </Box>
-    </Center>
+        </Container>
     )
 }
 

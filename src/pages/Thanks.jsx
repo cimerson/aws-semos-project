@@ -1,6 +1,10 @@
 import React from 'react'
 
-import { Box, Heading, Text, Image, Center, Stack } from '@chakra-ui/react'
+import { Heading, Text, Image, Center, Stack } from '@chakra-ui/react'
+
+import semosEducation from '../assets/semos-education.png'
+import agencyLogo from '../assets/logo-agencija-severna.png'
+
 
 const Thanks = () => {
     return (
@@ -8,20 +12,20 @@ const Thanks = () => {
             <Stack spacing={8} align='center'>
                 <Heading size='2xl'>Thank You!</Heading>
                 <Text fontSize='lg'>
-                    We're incredibly grateful for the free course and the amazing
+                    We're incredibly grateful for the free courses and the amazing
                     agency that made it possible.
                 </Text>
                 <Stack direction='row' spacing={6}>
                     <Image
-                        src='course-logo.png' // Replace with course logo
-                        alt='Course Logo'
-                        boxSize='100px'
+                        src={semosEducation}
+                        alt='semos-education'
+                        boxSize='350px'
                         objectFit='contain'
                     />
                     <Image
-                        src='agency-logo.png' // Replace with agency logo
-                        alt='Agency Logo'
-                        boxSize='100px'
+                        src={agencyLogo}
+                        alt='agency-logo'
+                        boxSize='350px'
                         objectFit='contain'
                     />
                 </Stack>
