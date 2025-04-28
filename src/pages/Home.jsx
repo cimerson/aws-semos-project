@@ -18,8 +18,8 @@ const Home = () => {
     const MotionText = motion(Text)
 
     return (
-        <Container maxW='container.xl' pt={10} pb={10}>
-            <Center height='80vh'>
+        <Container maxW='container.xl'>
+            <Center minHeight='calc(100vh - 128px)'>
                 <Stack spacing={8} align='center'>
                     <Box textAlign='center'>
                         <MotionHeading
